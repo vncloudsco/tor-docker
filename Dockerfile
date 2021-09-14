@@ -1,5 +1,4 @@
-FROM ubuntu:20.04
-RUN apt update
-RUN apt install tor -y
-RUN rm -rf /etc/tor/torrc
-COPY torrc /etc/tor/torrc
+FROM dperson/torproxy:latest
+RUN echo "HiddenServiceDir /var/lib/tor/hsv3" >> /etc/tor/torrc
+RUN echo "HiddenServiceVersion 3" >> /etc/tor/torrc
+RUN echo "HiddenServicePort 6668 192.168.100.112:10987" >> /etc/tor/torrc
