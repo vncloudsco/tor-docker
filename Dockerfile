@@ -1,6 +1,4 @@
 FROM ubuntu:20.04
-RUN apt install apt-transport-https && \
-    apt install apt-transport-tor && \
-    apt install tor
+RUN apt install tor -y
 RUN rm -rf /etc/tor/torrc
 COPY torrc /etc/tor/torrc
