@@ -1,5 +1,4 @@
 FROM ubuntu:20.04
-RUN add-apt-repository ppa:micahflee/ppa
 RUN apt install apt-transport-https && \
     apt install apt-transport-tor && \
     apt install tor
